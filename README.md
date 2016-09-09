@@ -12,14 +12,23 @@ an obstacle, the rover moves up to the last possible point and reports the obsta
 
 ## Install
 ```
+npm install
 ```
 
 ## Usage
 ```javascript
+var marsRover = require('./src/index.js');
+var terrain = new marsRover.Terrain(3, 3);
+terrain.addObstacle([1,1]);
+var rover = new marsRover.Rover(
+    terrain,
+    [0, 0],
+    marsRover.directions.east
+);
+rover.runCommands('f,r,f,f');
 ```
 
 ## Testing
 ```
+npm test
 ```
-
-## Docs
