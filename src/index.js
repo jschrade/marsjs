@@ -35,6 +35,22 @@ function Terrain(width, height) {
     });
 };
 
+Terrain.prototype.xMax = function () {
+    return this.width - 1;
+};
+
+Terrain.prototype.yMax = function () {
+    return this.height - 1;
+};
+
+Terrain.prototype.addObstacle = function (coord) {
+    this.terrain[coord[0]][coord[1]] = 1;
+};
+
+Terrain.prototype.isClear = function (coord) {
+    return this.terrain[coord[0]][coord[1]] == 0;
+};
+
 function Rover(terrain, location, direction) {
     this.terrain = terrain;
     this.x = location[0];

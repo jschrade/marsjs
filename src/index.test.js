@@ -34,6 +34,46 @@ describe('marsjs', function() {
                 [0, 0, 0]
             ]);
         });
+
+        it('should have a x maximum', function() {
+            var terrain = new marsRover.Terrain(3, 4);
+
+            expect(terrain.xMax()).to.eql(2);
+        });
+
+        it('should have a y maximum', function() {
+            var terrain = new marsRover.Terrain(3, 4);
+
+            expect(terrain.yMax()).to.eql(3);
+        });
+
+        it('should add an obstacle', function() {
+            var terrain = new marsRover.Terrain(2, 2);
+
+            expect(terrain.terrain).to.eql([
+                [0, 0],
+                [0, 0]
+            ]);
+
+            terrain.addObstacle([0,0]);
+
+            expect(terrain.terrain).to.eql([
+                [1, 0],
+                [0, 0]
+            ]);
+        });
+
+        it('should be able to tell if location is obstacle free', function() {
+            var terrain = new marsRover.Terrain(2, 2);
+            terrain.addObstacle([0, 0]);
+            expect(terrain.terrain).to.eql([
+                [1, 0],
+                [0, 0]
+            ]);
+            expect(terrain.isClear([0, 0])).to.be.false;
+            expect(terrain.isClear([0, 1])).to.be.true;
+        });
+
     });
 
     describe('Rover', function() {
