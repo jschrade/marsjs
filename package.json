@@ -1,0 +1,25 @@
+{
+  "name": "marsjs",
+  "version": "0.0.1",
+  "description": "Code Challenge: Mars Rover",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jschrade/marsjs.git"
+  },
+  "keywords": [
+    "Code",
+    "Challege"
+  ],
+  "author": "Josh Schrade",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jschrade/marsjs/issues"
+  },
+  "dependencies": {
+    "lodash": "~4.15.0"
+  }
+}
